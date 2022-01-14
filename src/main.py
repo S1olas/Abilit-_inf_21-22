@@ -1,3 +1,4 @@
+import sys
 a = 3
 b = 5
 a+b
@@ -125,3 +126,71 @@ for i in di2.items():
 #Mi stampa solo il valore contenuto della variabile
 for t in di2.values():
   print('Item del dictionary di2',t)
+
+
+
+#14/10
+
+def arearettangolo():
+  print('calcolo area rettangolo')
+  base = float(input("base="))
+  altezza = float(input("Altezza="))
+  arearett = base*altezza*0.5
+  print('Area del rettangolo è',arearett)
+
+arearettangolo()
+
+
+def f(y9):
+ if y9>= 0.0:
+   return y9**2*math.exp(-y9)
+ else:
+    return 0.0
+
+infile ='mydata.dat'
+outfile='myout.dat'
+
+indata = open(infile, 'r')
+linee=indata.readlines()
+indata.close()
+processati=[]
+x9=[]
+for el in linee:
+  valori = el.split()
+  x9.append(float(valori[0]))
+  #y9=float(valori[1])
+  #processati.append(f(y9))
+
+outdata = open(outfile,'w')
+i = 0
+for el in processati:
+  outdata.write('%g %12.5e\n' % (x9[i],el))
+  i+=1
+outdata.close
+
+
+
+
+lll =[]
+with open('input1.txt','r') as kkk:
+  for line in kkk:
+    line = line.strip()
+    if len(line)>0:
+      lll.append(list(map(int,line.split(','))))
+print(lll)
+
+
+
+fin=open('input1.txt','r')
+aaa=[]
+for line in fin.readlines():
+  aaa.append([int(tt) for tt in line.split(',')])
+
+
+oo=[]
+with open('input1.txt','r') as kk:
+  for line in kk:
+    line = line.strip()
+    if len(line)>0:
+      oo.append(list(map(int,line.split(','))))
+print(oo)
